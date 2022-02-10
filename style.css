@@ -1,0 +1,67 @@
+/* Home Background */
+html.game {
+    background-image: url(images/home_background.jpg);
+  }
+
+/* Font Styles */
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.4em;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+span {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Column Grid */
+main.cols-12 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main.cols-12 section.col1 {
+    width: 8.33%;
+  }
+  main.cols-12 section.col2 {
+    width: 16.66%;
+  }
+  main.cols-12 section.col3 {
+    width: 25%;
+  }
+  main.cols-12 section.col4 {
+    width: 33.33%;
+  }
+  main.cols-12 section.col5 {
+    width: 41.66%;
+  }
+  main.cols-12 section.col6 {
+    width: 50%;
+  }
+  main.cols-12 section.col7 {
+    width: 58.33%;
+  }
+  main.cols-12 section.col8 {
+    width: 66.66%;
+  }
+  main.cols-12 section.col9 {
+    width: 75%;
+  }
+  main.cols-12 section.col10 {
+    width: 83.33%;
+  }
+  main.cols-12 section.col11 {
+    width: 91.66%;
+  }
+  main.cols-12 section.col12 {
+    width: 100%;
+  }
