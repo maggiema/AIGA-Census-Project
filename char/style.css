@@ -1,0 +1,34 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    height: 100px;
+}
+
+td {
+    width: 100px;
+    text-align: center;
+}
+
+.entersticker {
+    width: 100px;
+}
+
+.herro {
+    color: pink;
+    background-color: #000000;
+}
+
+.uwu {
+    border-radius: 20px;
+}
+
+#hello {
+    color: green;
+    background-color: purple;
+}
