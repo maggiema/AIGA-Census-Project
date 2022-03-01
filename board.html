@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="board">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Game of Design</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/ada1yyu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div id="navigation-bar">
+      <h1><a href="index.html">THE_GAME OF DESIGN_</a></h1>
+      <h1 id="restart">RESTART</h1>
+      <hr></hr>
+    </div>
+    <!-- Main Content -->
+    <div id="main-container">
+      <div id="grid"></div>
+      <div id="UI">
+        <!-- Card Content -->
+        <div id="card-container">
+          <!-- Choice Buttons -->
+          <img id="counter-img" src="./img/smiley.png" />
+          <button id="happy">5</button>
+          <!-- Risk Options -->
+          <button id="option-a" class="risk"></button>
+          <button id="option-b" class="risk"></button>
+          <!-- Expertise Options -->
+          <button id="ai" class="job"></button>
+          <button id="ar" class="job"></button>
+          <button id="game" class="job"></button>
+          <button id="graphic" class="job"></button>
+          <button id="ill" class="job"></button>
+          <button id="pack" class="job"></button>
+          <!-- Privilege Options -->
+          <button id="white" class="race"></button>
+          <button id="black" class="race"></button>
+          <button id="asian" class="race"></button>
+          <button id="latino" class="race"></button>
+          <button id="multi" class="race"></button>
+          <button id="other" class="race"></button>
+        </div>
+        <!-- Move Buttons -->
+        <div>
+          <button id="flip">FLIP</button>
+          <button id="done">DONE</button>
+        </div>
+        <!-- Card Buttons -->
+        <div id="card-btns">
+          <button id="risk-btn">
+            <img class="card-btn-img" src="./img/risk_btn.png" />
+          </button>
+          <button id="reward-btn">
+            <img class="card-btn-img" src="./img/reward_btn.png" />
+          </button>
+          <button id="obstacle-btn">
+            <img class="card-btn-img" src="./img/obstacle_btn.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

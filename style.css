@@ -1,223 +1,215 @@
-/* Blank Canvas */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+/* Icon Appearance */
+* {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
+
+/*html.board {
+  background-image: url(img/board_background.jpg);
+  background-size: 100% auto;
+  width: 100%;
+  height: auto;
+}*/
+
+/* Webpage Space */
 body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  margin: 20px 0 0 0;
+  color: transparent;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-/* Home Background */
-html.game {
-    background-image: url(images/home_background.jpg);
-    background-size: 100% auto;
-    width: 100%;
-    height: 935px;
-  }
-
-/* Font Styles */
-p {
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 16px;
-    line-height: 1.4em;
+/* Grid Properties */
+#main-container {
+  display: flex;
 }
+#grid {
+  display: table;
+  width: 60vw;
+  height: 90vh;
+  /* background-color: pink; */
+  /* todo: make this an image instead */
+}
+.grid-cell {
+  width: 19.35%; /* 1/6 = 0.1666 */
+  height: 20.35%;
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px #FE5B32 dashed;
+  border-right: 1px #FE5B32 dashed;
+}
+
+/* Cell Properties */
+.cell-img {
+  height: 100%;
+  margin: 0 0 0 5%;
+  position: absolute;
+  left: 0%;
+}
+.active-cell:hover {
+  background-color: #FE5B32;
+  cursor: pointer;
+}
+
+/* Font Properties */
 h1 {
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-weight: 600;
-    font-size: 3.5em;
-}
-h2 {
-    font-size: 1.5em;
-}
-h3 {
-    font-family: freight-big-pro, Georgia, serif;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 20px;
-    line-height: 1.4em;
-}
-span {
-    font-family: freight-big-pro, Georgia, serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 4em;
-}
-a {
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 3em;
-    color: #000000;
-    text-decoration: none;
-}
-
-/* Space Area */
-p.space {
-  margin: 340px 0 0 0;
-}
-h1.together {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FE5B32;
   display: inline;
+  margin: 40px;
 }
-h3.space {
-  margin: 100px 0 0 0;
+#restart {
+  text-align: right;
+  margin: 0 0 0 940px;
 }
-a.space {
-  margin: 100px 0 0 80px;
+a{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FE5B32;
+  display: inline;
+  text-decoration: none;
 }
 
-/* Column Grid */
-  main.cols-12 {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  main.cols-12 section.col1 {
-    width: 8.33%;
-  }
-  main.cols-12 section.col2 {
-    width: 16.66%;
-  }
-  main.cols-12 section.col3 {
-    width: 25%;
-  }
-  main.cols-12 section.col4 {
-    width: 33.33%;
-  }
-  main.cols-12 section.col5 {
-    width: 41.66%;
-  }
-  main.cols-12 section.col6 {
-    width: 50%;
-  }
-  main.cols-12 section.col7 {
-    width: 58.33%;
-  }
-  main.cols-12 section.col8 {
-    width: 66.66%;
-  }
-  main.cols-12 section.col9 {
-    width: 75%;
-  }
-  main.cols-12 section.col10 {
-    width: 83.33%;
-  }
-  main.cols-12 section.col11 {
-    width: 91.66%;
-  }
-  main.cols-12 section.col12 {
-    width: 100%;
-  }
+/* Line Style */
+hr {
+  margin: 22px 0 0 0;
+  height: 3px;
+  border: none;
+  background-color: #FE5B32;
+}
+
+/* Button Properties */
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#happy{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  left: 90%;
+  color: #FE5B32;
+}
+#counter-img {
+  width: 10%;
+  height: auto;
+  position: absolute;
+  left: 80%;
+}
+.risk {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 35%;
+  height: 14%;
+  border-radius: 10px;
+  position: absolute;
+  top: 43%;
+  left: 33%;
+  display: none;
+}
+/*.risk:hover {
+  background-color: #FE5B32;
+  opacity: 25%;
+}*/
+#option-b {
+  top: 62%;
+}
+.job {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 34%;
+  height: 10%;
+  border-radius: 5px;
+  top: 36%;
+  left: 33%;
+  position: absolute;
+  /*display: none;*/
+}
+/*.about:hover {
+  background-color: #FE5B32;
+  opacity: 25%;
+}*/
+#ar {
+  top: 47%;
+}
+#game {
+  top: 58%;
+}
+#graphic {
+  top: 69%;
+}
+#ill {
+  top: 80%;
+}
+#pack {
+  top: 91%;
+}
+.race {
+  background-color: #FE5B32;
+  opacity: 50%;
+  width: 34%;
+  height: 10%;
+  border-radius: 5px;
+  top: 36%;
+  left: 33%;
+  position: absolute;
+  display: none;
+}
+#black {
+  top: 47%;
+}
+#asian {
+  top: 58%;
+}
+#latino {
+  top: 69%;
+}
+#multi {
+  top: 80%;
+}
+#other {
+  top: 91%;
+}
+#done{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #ffffff;
+  display: inline;
+  margin: 0 0 5% 35%;
+}
+#flip{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #ffffff;
+  display: inline;
+  margin: 0 0 5% 25%;
+}
+
+/* Card Properties */
+#card-container {
+  width: 40vw;
+  height: 50vh;
+  margin: 5% 0 20% 0;
+  position: relative;
+  /* background-color: pink; */
+}
+.card-img {
+  /* display: none; */
+  width: 50%;
+  height: auto;
+  margin: 0 0 0 25%;
+}
+.card-btn-img {
+  /* display: none; */
+  width: 11vw;
+  margin: 0 0 0 25%;
+}
