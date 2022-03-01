@@ -1,0 +1,215 @@
+/* Icon Appearance */
+* {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/*html.board {
+  background-image: url(img/board_background.jpg);
+  background-size: 100% auto;
+  width: 100%;
+  height: auto;
+}*/
+
+/* Webpage Space */
+body {
+  margin: 20px 0 0 0;
+  color: transparent;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Grid Properties */
+#main-container {
+  display: flex;
+}
+#grid {
+  display: table;
+  width: 60vw;
+  height: 90vh;
+  /* background-color: pink; */
+  /* todo: make this an image instead */
+}
+.grid-cell {
+  width: 19.35%; /* 1/6 = 0.1666 */
+  height: 20.35%;
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px #FE5B32 dashed;
+  border-right: 1px #FE5B32 dashed;
+}
+
+/* Cell Properties */
+.cell-img {
+  height: 100%;
+  margin: 0 0 0 5%;
+  position: absolute;
+  left: 0%;
+}
+.active-cell:hover {
+  background-color: #FE5B32;
+  cursor: pointer;
+}
+
+/* Font Properties */
+h1 {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FE5B32;
+  display: inline;
+  margin: 40px;
+}
+#restart {
+  text-align: right;
+  margin: 0 0 0 940px;
+}
+a{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FE5B32;
+  display: inline;
+  text-decoration: none;
+}
+
+/* Line Style */
+hr {
+  margin: 22px 0 0 0;
+  height: 3px;
+  border: none;
+  background-color: #FE5B32;
+}
+
+/* Button Properties */
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#happy{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  left: 90%;
+  color: #FE5B32;
+}
+#counter-img {
+  width: 10%;
+  height: auto;
+  position: absolute;
+  left: 80%;
+}
+.risk {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 35%;
+  height: 14%;
+  border-radius: 10px;
+  position: absolute;
+  top: 43%;
+  left: 33%;
+  display: none;
+}
+/*.risk:hover {
+  background-color: #FE5B32;
+  opacity: 25%;
+}*/
+#option-b {
+  top: 62%;
+}
+.job {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 34%;
+  height: 10%;
+  border-radius: 5px;
+  top: 36%;
+  left: 33%;
+  position: absolute;
+  /*display: none;*/
+}
+/*.about:hover {
+  background-color: #FE5B32;
+  opacity: 25%;
+}*/
+#ar {
+  top: 47%;
+}
+#game {
+  top: 58%;
+}
+#graphic {
+  top: 69%;
+}
+#ill {
+  top: 80%;
+}
+#pack {
+  top: 91%;
+}
+.race {
+  background-color: #FE5B32;
+  opacity: 50%;
+  width: 34%;
+  height: 10%;
+  border-radius: 5px;
+  top: 36%;
+  left: 33%;
+  position: absolute;
+  display: none;
+}
+#black {
+  top: 47%;
+}
+#asian {
+  top: 58%;
+}
+#latino {
+  top: 69%;
+}
+#multi {
+  top: 80%;
+}
+#other {
+  top: 91%;
+}
+#done{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #ffffff;
+  display: inline;
+  margin: 0 0 5% 35%;
+}
+#flip{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #ffffff;
+  display: inline;
+  margin: 0 0 5% 25%;
+}
+
+/* Card Properties */
+#card-container {
+  width: 40vw;
+  height: 50vh;
+  margin: 5% 0 20% 0;
+  position: relative;
+  /* background-color: pink; */
+}
+.card-img {
+  /* display: none; */
+  width: 50%;
+  height: auto;
+  margin: 0 0 0 25%;
+}
+.card-btn-img {
+  /* display: none; */
+  width: 11vw;
+  margin: 0 0 0 25%;
+}
