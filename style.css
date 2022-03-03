@@ -3,12 +3,12 @@
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-/*html.board {
+html.board {
   background-image: url(img/board_background.jpg);
   background-size: 100% auto;
-  width: 100%;
+  width: 103%;
   height: auto;
-}*/
+}
 
 /* Webpage Space */
 body {
