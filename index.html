@@ -8,9 +8,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>The Game of Design</title>
   
-  <!-- JavaScript -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
-  
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="home.css">
   
@@ -38,10 +35,17 @@
     <section class="col6">
     <h3 class="space">All the good, the bad, and the ugly...</h3>
     <p>of being a designer! Embark on your design journey to learn about <br> the challenges, setbacks, and surprises that define what we do and <br> why we love doing it.</p>
+    <p>Enter Your Name</p>
+    <form onsubmit="submitButton()">
+      <input type="text" id="input-name" name="name">
+      <input type="submit" id="submit" value="Submit">
+    </form>
     </section>
     <a href="board.html" class="space">Start</a>
     <section class="col4"></section>
 
+    <!-- JS -->
+    <script type="module" src="./main.js"></script>
   </main>
 </body>
 
