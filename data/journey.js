@@ -1,20 +1,20 @@
 const journey_data = [
-  // grid_image: "enter_journey.png",
-  // card_type: "risk",
-  // option_type: ["op 1", "op 2"],
   {
     grid_image: "start.png",
+    color_image: "quote.png",
     grid_color: "#D0F801",
     other_card: "start_ins.png",
   },
   {
     grid_image: "expertise.png",
+    color_image: "quote.png",
     grid_color: "#E7E1FF",
     other_card: "expertise_card.png",
     option_a: "graphic.png",
   },
   {
     grid_image: "reward.png",
+    color_image: "quote.png",
     grid_color: "#D0F801",
     other_card: "card_ins.png",
     card_type: "reward_card_1.png",
@@ -22,11 +22,13 @@ const journey_data = [
   },
   {
     grid_image: "quote.png",
+    color_image: "smiley.png",
     grid_color: "#BAF3FF",
     other_card: "quote_card_1.png",
   },
   {
     grid_image: "risk.png",
+    color_image: "smiley.png",
     grid_color: "#FFF73D",
     other_card: "blank.png",
     card_type: "risk_card_1.png",
