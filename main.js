@@ -51,7 +51,12 @@ function initBtns() {
     };
     let done = document.getElementById("done"); // done button
     done.onclick = function () {
-      removeCard(btn);
+      if (currentMove <= 24) {
+        removeCard(btn);
+      }
+      else {
+        showStickers(btn);
+      }
     };
     let flip = document.getElementById("flip"); // flip button
     flip.onclick = function () {
@@ -156,6 +161,10 @@ function handleStateChange() {
   if(lastMove >= 1) {
     const old = document.getElementById("cell-index-" + lastBox);
     old.style.backgroundColor = "#FFFEFC";
+    let oldImage = document.createElement("img");
+    oldImage.src = "./img/" + data.color_image;
+    oldImage.className = "cell-img";
+    old.appendChild(oldImage);
   }
 
   // UI 2. display the right card with text/options
@@ -201,6 +210,7 @@ function handleStateChange() {
     //let main = document.getElementById("main-container");
     //main.style.display = "none";
     //console.log("end");
+    //showStickers();
   //}
 }
 
@@ -242,6 +252,7 @@ function handleOptionA(type) {
   setActiveTile(currentMove);
 
   choices.push(data.option_a);
+  console.log(choices);
 }
 
 // Icon B Change
@@ -321,6 +332,7 @@ function aboutCard(type) {
   box.appendChild(aboutImage);
 }
 
+// Smilie Counter
 function smilieCounter(index, count) {
   if(index == 6 || index == 14 || index == 19 || index == 22) {
     count++;
@@ -334,19 +346,86 @@ function smilieCounter(index, count) {
   counter = count;
 }
 
+// End Page
 function showStickers() {
+  console.log("end");
+
+  let main = document.getElementById("main-container");
+  main.style.display = "none";
+
   const page = document.getElementById("sticker-container");
-  for(let i = 0; i < choices.length; i++){
-    let stickerImage = document.createElement("img");
-    stickerImage.className = "sticker-img";
-    stickerImage.style.position = "absolute";
-    stickerImage.style.top = Math.random()*windownHeight*.8;
-    stickerImage.style.left = Math.random()*windownWidth*.8;
-    page.appendChild(stickerImage);
+  const numRows = 2;
+  const numCols = 5;
+  for (let row = 0; row < numRows; row++) {
+    for (let col = 0; col < numCols; col++) {
+      let i = row * numCols + col;
+
+      let stickerImage = document.createElement("img");
+      stickerImage.src = "./img/" + choices[i];
+      stickerImage.className = "sticker-img";
+      if(i % 2 == 0) {
+        stickerImage.style.transform = "rotate(45deg)";
+      }
+      else {
+        stickerImage.style.transform = "rotate(315deg)";
+      }
+      console.log(stickerImage);
+      page.appendChild(stickerImage);
+    }
   }
+  
+  //for(let i = 0; i < choices.length; i++){
+    //let stickerImage = document.createElement("img");
+    //stickerImage.className = "sticker-img";
+    //stickerImage.style.position = "absolute";
+    //stickerImage.style.top = Math.random()*windownHeight*.8;
+    //stickerImage.style.left = Math.random()*windownWidth*.8;
+    //page.appendChild(stickerImage);
+  //}
+}
+
+// Display Name
+function addName() {
+  var nameString = localStorage.getItem("playerName");
+
+  if (nameString === null) {
+    var playerName = [];
+  }
+  else {
+    playerName = JSON.parse(nameString);
+  }
+
+  var firstName = document.getElementById("input-name").value;
+  playerName.push(firstName);
+  localStorage.setItem("playerName", JSON.stringify(playerName));
+}
+
+function updatePage() {
+  var nameString = localStorage.getItem("playerName");
+  if (nameString !== null) {
+    var playerName = JSON.parse(nameString);
+    var displayName = document.getElementById("show-name");
+    displayName.innerHTML = "";
+
+    if (playerName.length === 0) {
+      document.getElementById("placeholder").style.visibility = "visible";
+    }
+    else {
+      document.getElementById("placeholder").style.visibility = "hidden";
+      var long = playerName.length;
+      var name = playerName[long - 1];
+      displayName.appendChild(name);
+    }
+  }
+}
+
+function submitButton() {
+  console.log("name here");
+  addName();
+  updatePage();
 }
 
 // On Load
 initGrid();
 initBtns();
-showStickers();
+updatePage();
