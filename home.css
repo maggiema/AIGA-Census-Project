@@ -169,6 +169,18 @@ a {
     text-decoration: none;
 }
 
+/* Input Style */
+input[type=text] {
+  width: 40%;
+  padding: 10px 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #FE5B32;
+  border-radius: 0px;
+  color: #FE5B32;
+  outline: none;
+}
+
 /* Space Area */
 p.space {
   margin: 340px 0 0 0;
