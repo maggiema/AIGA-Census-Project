@@ -16,18 +16,18 @@ function initGrid() {
 
   // loop over rows and columns 5x5
   for (let row = 0; row < numRows; row++) {
-      for (let col = 0; col < numCols; col++) {
-        let index = row * numCols + col;
-        if (index % 10 >= 5) index = row * numCols + (4 - col);
+    for (let col = 0; col < numCols; col++) {
+      let index = row * numCols + col;
+      if (index % 10 >= 5) index = row * numCols + (4 - col);
 
-        // make a new div for each cell
-        let newDiv = document.createElement("div");
-        newDiv.setAttribute("id", "cell-index-" + index);
-        newDiv.setAttribute("class", "grid-cell");
-        // newDiv.textContent = "grid cell:" + index;
-        newDiv.textContent = index + 1;
-        container.appendChild(newDiv);
-      }
+      // make a new div for each cell
+      let newDiv = document.createElement("div");
+      newDiv.setAttribute("id", "cell-index-" + index);
+      newDiv.setAttribute("class", "grid-cell");
+      // newDiv.textContent = "grid cell:" + index;
+      newDiv.textContent = index + 1;
+      container.appendChild(newDiv);
+    }
   }
 
   setActiveTile(0);
@@ -53,8 +53,7 @@ function initBtns() {
     done.onclick = function () {
       if (currentMove <= 24) {
         removeCard(btn);
-      }
-      else {
+      } else {
         showStickers(btn);
       }
     };
@@ -63,42 +62,42 @@ function initBtns() {
       flipCard(btn);
     };
     // expertise options
-    let ai = document.getElementById("ai")
+    let ai = document.getElementById("ai");
     ai.onclick = function () {
       about = 0;
       aboutCard(btn);
       handleOptionA(btn);
-    }; 
-    let ar = document.getElementById("ar")
+    };
+    let ar = document.getElementById("ar");
     ar.onclick = function () {
       about = 1;
       aboutCard(btn);
       handleOptionA(btn);
-    }; 
-    let game = document.getElementById("game")
+    };
+    let game = document.getElementById("game");
     game.onclick = function () {
       about = 2;
       aboutCard(btn);
       handleOptionA(btn);
-    }; 
-    let graphic = document.getElementById("graphic")
+    };
+    let graphic = document.getElementById("graphic");
     graphic.onclick = function () {
       about = 3;
       aboutCard(btn);
       handleOptionA(btn);
-    };  
-    let ill = document.getElementById("ill")
+    };
+    let ill = document.getElementById("ill");
     ill.onclick = function () {
       about = 4;
       aboutCard(btn);
       handleOptionA(btn);
-    }; 
-    let pack = document.getElementById("pack")
+    };
+    let pack = document.getElementById("pack");
     pack.onclick = function () {
       about = 5;
       aboutCard(btn);
       handleOptionA(btn);
-    }; 
+    };
   });
 }
 
@@ -158,7 +157,7 @@ function handleStateChange() {
   cell.style.borderBottom = "1px #FE5B32 solid";
   cell.style.color = "#FE5B32";
 
-  if(lastMove >= 1) {
+  if (lastMove >= 1) {
     const old = document.getElementById("cell-index-" + lastBox);
     old.style.backgroundColor = "#FFFEFC";
     let oldImage = document.createElement("img");
@@ -177,40 +176,41 @@ function handleStateChange() {
   }
   box.appendChild(cardImage);
 
-  if(data.other_card != "white.png") {
+  if (data.other_card != "white.png") {
     let done = document.getElementById("done");
     done.style.color = "#FE5B32";
-  }
-  else {
+  } else {
     let done = document.getElementById("done");
     done.style.color = "#FFFFFF";
   }
 
-  if(data.other_card == "expertise_card.png" || data.other_card == "privilege_card.png") {
+  if (
+    data.other_card == "expertise_card.png" ||
+    data.other_card == "privilege_card.png"
+  ) {
     let privilege = document.getElementById("graphic");
     privilege.style.display = "block";
-  }
-  else {
+  } else {
     let privilege = document.getElementById("graphic");
     privilege.style.display = "none";
   }
-  
+
   // UI 3. change active tiles
   currentMove += 1;
   setActiveTile(currentMove);
 
   //if (currentMove < 24) {
-    //setActiveTile(currentMove);
+  //setActiveTile(currentMove);
   //}
   //if (currentMove < 25) {
-    //currentMove += 1;
+  //currentMove += 1;
   //}
   //console.log("***" + currentMove);
   //if (currentMove == 25) {
-    //let main = document.getElementById("main-container");
-    //main.style.display = "none";
-    //console.log("end");
-    //showStickers();
+  //let main = document.getElementById("main-container");
+  //main.style.display = "none";
+  //console.log("end");
+  //showStickers();
   //}
 }
 
@@ -221,7 +221,7 @@ function handleCard(type) {
 
   console.log("Clicked " + type);
   const data = journey_data[currentMove - 1];
-  
+
   // add chosen option to options array
   const box = document.getElementById("card-container");
   let cardImage = document.createElement("img");
@@ -293,7 +293,7 @@ function removeCard() {
 function flipCard(type) {
   console.log("Clicked " + type);
   const data = journey_data[currentMove - 1];
-  
+
   const box = document.getElementById("card-container");
   let flipImage = document.createElement("img");
   flipImage.src = "./img/" + data.flip_card;
@@ -320,7 +320,7 @@ function aboutCard(type) {
   console.log("Clicked " + type);
   console.log("Clicked " + about);
   const player = player_data[about];
-  
+
   const box = document.getElementById("card-container");
   let aboutImage = document.createElement("img");
   aboutImage.src = "./img/" + player.about_card;
@@ -334,10 +334,9 @@ function aboutCard(type) {
 
 // Smilie Counter
 function smilieCounter(index, count) {
-  if(index == 6 || index == 14 || index == 19 || index == 22) {
+  if (index == 6 || index == 14 || index == 19 || index == 22) {
     count++;
-  }
-  else if(index == 8 || index == 15) {
+  } else if (index == 8 || index == 15) {
     console.log("-");
     count--;
   }
@@ -363,69 +362,26 @@ function showStickers() {
       let stickerImage = document.createElement("img");
       stickerImage.src = "./img/" + choices[i];
       stickerImage.className = "sticker-img";
-      if(i % 2 == 0) {
+      if (i % 2 == 0) {
         stickerImage.style.transform = "rotate(45deg)";
-      }
-      else {
+      } else {
         stickerImage.style.transform = "rotate(315deg)";
       }
       console.log(stickerImage);
       page.appendChild(stickerImage);
     }
   }
-  
+
   //for(let i = 0; i < choices.length; i++){
-    //let stickerImage = document.createElement("img");
-    //stickerImage.className = "sticker-img";
-    //stickerImage.style.position = "absolute";
-    //stickerImage.style.top = Math.random()*windownHeight*.8;
-    //stickerImage.style.left = Math.random()*windownWidth*.8;
-    //page.appendChild(stickerImage);
+  //let stickerImage = document.createElement("img");
+  //stickerImage.className = "sticker-img";
+  //stickerImage.style.position = "absolute";
+  //stickerImage.style.top = Math.random()*windownHeight*.8;
+  //stickerImage.style.left = Math.random()*windownWidth*.8;
+  //page.appendChild(stickerImage);
   //}
-}
-
-// Display Name
-function addName() {
-  var nameString = localStorage.getItem("playerName");
-
-  if (nameString === null) {
-    var playerName = [];
-  }
-  else {
-    playerName = JSON.parse(nameString);
-  }
-
-  var firstName = document.getElementById("input-name").value;
-  playerName.push(firstName);
-  localStorage.setItem("playerName", JSON.stringify(playerName));
-}
-
-function updatePage() {
-  var nameString = localStorage.getItem("playerName");
-  if (nameString !== null) {
-    var playerName = JSON.parse(nameString);
-    var displayName = document.getElementById("show-name");
-    displayName.innerHTML = "";
-
-    if (playerName.length === 0) {
-      document.getElementById("placeholder").style.visibility = "visible";
-    }
-    else {
-      document.getElementById("placeholder").style.visibility = "hidden";
-      var long = playerName.length;
-      var name = playerName[long - 1];
-      displayName.appendChild(name);
-    }
-  }
-}
-
-function submitButton() {
-  console.log("name here");
-  addName();
-  updatePage();
 }
 
 // On Load
 initGrid();
 initBtns();
-updatePage();

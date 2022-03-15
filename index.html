@@ -1,52 +1,63 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en" class="home">
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Game of Design</title>
 
-<head>
-  <!-- Meta -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>The Game of Design</title>
-  
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="home.css">
-  
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://use.typekit.net/ada1yyu.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">
-</head>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="home.css" />
 
-<body>
-  <main class="cols-12">
-   
-    <!-- Welcome to the Game of Design! -->
-    <section class="col1"></section>
-    <section class="col6">
-    <p class="space">Welcome to</p>
-    <h1 class="together"><strong>the Game of </strong></h1>
-    <span id="title">Design!</span>
-    </section>
-    <section class="col5"></section>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/ada1yyu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./index.js"></script>
+  </head>
 
-    <!-- Introduction and Start -->
-    <section class="col2"></section>
-    <section class="col6">
-    <h3 class="space">All the good, the bad, and the ugly...</h3>
-    <p>of being a designer! Embark on your design journey to learn about <br> the challenges, setbacks, and surprises that define what we do and <br> why we love doing it.</p>
-    <p>Enter Your Name</p>
-    <form onsubmit="submitButton()">
-      <input type="text" id="input-name" name="name">
-      <input type="submit" id="submit" value="Submit">
-    </form>
-    </section>
-    <a href="board.html" class="space">Start</a>
-    <section class="col4"></section>
+  <body>
+    <script>
+      function submitButton() {
+        console.log("im here");
+        var nameValue = document.getElementById("input-name").value;
+        addName(nameValue);
+      }
+    </script>
+    <main class="cols-12">
+      <!-- Welcome to the Game of Design! -->
+      <section class="col1"></section>
+      <section class="col6">
+        <p class="space">Welcome to</p>
+        <h1 class="together"><strong>the Game of </strong></h1>
+        <span id="title">Design!</span>
+      </section>
+      <section class="col5"></section>
 
-    <!-- JS -->
-    <script type="module" src="./main.js"></script>
-  </main>
-</body>
-
+      <!-- Introduction and Start -->
+      <section class="col2"></section>
+      <section class="col6">
+        <h3 class="space">All the good, the bad, and the ugly...</h3>
+        <p>
+          of being a designer! Embark on your design journey to learn about
+          <br />
+          the challenges, setbacks, and surprises that define what we do and
+          <br />
+          why we love doing it.
+        </p>
+        <p>Enter Your Name</p>
+        <form onsubmit="submitButton()">
+          <input type="text" id="input-name" name="name" />
+          <input type="submit" id="submit" value="Submit" />
+        </form>
+      </section>
+      <a href="board.html" class="space">Start</a>
+      <section class="col4"></section>
+    </main>
+  </body>
 </html>
