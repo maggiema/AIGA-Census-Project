@@ -33,7 +33,8 @@ const journey_data = [
   {
     grid_image: "fact.png",
     grid_color: "#FFF73D",
-    other_card: "fact_one_1.png",
+    other_card_one: "fact_one_1.png",
+    other_card_two: "fact_one_2.png",
   },
   {
     grid_image: "obstacle.png",
@@ -78,7 +79,8 @@ const journey_data = [
   {
     grid_image: "fact.png",
     grid_color: "#FFF73D",
-    other_card: "fact_two_1.png",
+    other_card_one: "fact_two_1.png",
+    other_card_two: "fact_two_2.png",
   },
   {
     grid_image: "mirror.png",
@@ -105,7 +107,8 @@ const journey_data = [
   {
     grid_image: "fact.png",
     grid_color: "#FFF73D",
-    other_card: "fact_three_1.png",
+    other_card_one: "fact_three_1.png",
+    other_card_two: "fact_three_2.png",
   },
   {
     grid_image: "obstacle.png",
@@ -138,7 +141,8 @@ const journey_data = [
   {
     grid_image: "fact.png",
     grid_color: "#FFF73D",
-    other_card: "fact_four_1.png",
+    other_card_one: "fact_four_1.png",
+    other_card_two: "fact_four_2.png",
   },
   {
     grid_image: "reward.png",

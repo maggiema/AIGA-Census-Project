@@ -73,7 +73,11 @@ h1 {
   font-weight: 600;
   color: #FE5B32;
   display: inline;
-  margin: 40px;
+  margin: 40px 0;
+}
+#show-name {
+  margin: 0 0 0 40px;
+  padding: 0;
 }
 #restart {
   text-align: right;
@@ -259,7 +263,7 @@ button {
   text-decoration: underline;
   color: #ffffff;
   display: inline;
-  margin: 0 0 5% 35%;
+  margin: 0 0 3% 48%;
 }
 #flip{
   font-family: 'Bai Jamjuree', sans-serif;
@@ -268,14 +272,14 @@ button {
   text-decoration: underline;
   color: #ffffff;
   display: inline;
-  margin: 0 0 5% 25%;
+  margin: 0 0 3% 20%;
 }
 
 /* Card Properties */
 #card-container {
   width: 40vw;
   height: 50vh;
-  margin: 5% 0 16% 0;
+  margin: 5% 0 18% 0;
   position: relative;
   /* background-color: pink; */
 }
@@ -283,7 +287,19 @@ button {
   /* display: none; */
   width: 50%;
   height: auto;
-  margin: 0 0 0 25%;
+  margin: 0 0 0 20%;
+}
+.ins-img {
+  /* display: none; */
+  width: 85%;
+  height: auto;
+  margin: 0;
+}
+.hint-img {
+  /* display: none; */
+  width: 70%;
+  height: auto;
+  margin: 35% 0 0 20%;
 }
 .card-btn-img {
   /* display: none; */

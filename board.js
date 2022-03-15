@@ -255,14 +255,14 @@ function handleStateChange() {
   cell.style.borderBottom = "1px #FE5B32 solid";
   cell.style.color = "#FE5B32";
 
-  if (lastMove == 8 || lastMove == 11) {
-    const old = document.getElementById("cell-index-" + lastBox);
-    old.style.backgroundColor = "#FFFEFC";
-    let oldImage = document.createElement("img");
-    oldImage.src = "./img/" + data.color_image;
-    oldImage.className = "cell-img";
-    old.appendChild(oldImage);
-  }
+  //if (lastMove == 8 || lastMove == 11) {
+    //const old = document.getElementById("cell-index-" + lastBox);
+    //old.style.backgroundColor = "#FFFEFC";
+    //let oldImage = document.createElement("img");
+    //oldImage.src = "./img/" + data.color_image;
+    //oldImage.className = "cell-img";
+    //old.appendChild(oldImage);
+  //}
 
   if (lastMove >= 1) {
     const old = document.getElementById("cell-index-" + lastBox);
@@ -276,17 +276,60 @@ function handleStateChange() {
   // UI 2. display the right card with text/options
   const box = document.getElementById("card-container");
   let cardImage = document.createElement("img");
-  cardImage.src = "./img/" + data.other_card;
-  cardImage.className = "card-img";
+  if(lastMove == 5) {
+    if (choices[choices.length - 1] == "friends.png") {
+      cardImage.src = "./img/" + data.other_card_one;
+    }
+    else {
+      cardImage.src = "./img/" + data.other_card_two;
+    }
+  }
+  else if(lastMove == 12) {
+    if (choices[choices.length - 1] == "high_sal.png") {
+      cardImage.src = "./img/" + data.other_card_one;
+    }
+    else {
+      cardImage.src = "./img/" + data.other_card_two;
+    }
+  }
+  else if(lastMove == 16) {
+    if (choices[choices.length - 1] == "favors.png") {
+      cardImage.src = "./img/" + data.other_card_one;
+    }
+    else {
+      cardImage.src = "./img/" + data.other_card_two;
+    }
+  }
+  else if(lastMove == 21) {
+    if (choices[choices.length - 1] == "51-60h.png") {
+      cardImage.src = "./img/" + data.other_card_one;
+    }
+    else {
+      cardImage.src = "./img/" + data.other_card_two;
+    }
+  }
+  else {
+    cardImage.src = "./img/" + data.other_card;
+  }
+  if(lastMove == 0 || lastMove == 24) {
+    cardImage.className = "ins-img";
+  }
+  else if(lastMove == 2) {
+    cardImage.className = "hint-img";
+  }
+  else {
+    cardImage.className = "card-img";
+  }
   if (box.hasChildNodes()) {
     box.removeChild(box.lastChild);
   }
   box.appendChild(cardImage);
 
-  if (data.other_card != "white.png") {
+  if (data.other_card == "end_ins.png") {
     let done = document.getElementById("done");
     done.style.color = "#FE5B32";
-  } else {
+  }
+  else {
     let done = document.getElementById("done");
     done.style.color = "#FFFFFF";
   }
@@ -467,8 +510,8 @@ function removeCard() {
   let optionB = document.getElementById("option-b");
   optionB.style.display = "none";
 
-  let done = document.getElementById("done");
-  done.style.color = "#FFFFFF";
+  //let done = document.getElementById("done");
+  //done.style.color = "#FFFFFF";
 }
 
 // Flip Card
@@ -488,8 +531,8 @@ function flipCard(type) {
 
   let flip = document.getElementById("flip");
   flip.style.color = "#ffffff";
-  let done = document.getElementById("done");
-  done.style.color = "#FE5B32";
+  //let done = document.getElementById("done");
+  //done.style.color = "#FE5B32";
 
   let optionA = document.getElementById("option-a");
   optionA.style.display = "block";
@@ -530,9 +573,9 @@ function aboutCard(type) {
 
 // Smilie Counter
 function smilieCounter(index, count) {
-  if (index == 6 || index == 14 || index == 19 || index == 22) {
+  if (index == 2 || index == 14 || index == 19 || index == 22) {
     count++;
-  } else if (index == 8 || index == 15) {
+  } else if (index == 6 || index == 9 || index == 17) {
     console.log("-");
     count--;
   }

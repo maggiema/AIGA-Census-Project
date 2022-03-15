@@ -9,14 +9,16 @@ function updatePage() {
     if (document.getElementById("placeholder")) {
       if (playerName.length === 0) {
         document.getElementById("placeholder").style.visibility = "visible";
-      } else {
+      }
+      else {
         document.getElementById("placeholder").style.visibility = "hidden";
-
-        // not sure what you are doing here
-        // var long = playerName.length;
-        // var name = playerName[long - 1];
-        // displayName.appendChild(playerName);
       }
     }
   }
+  bigLetters();
+}
+
+function bigLetters() {
+  let text = document.getElementById("show-name").innerHTML;
+  document.getElementById("show-name").innerHTML = text.toUpperCase();
 }
