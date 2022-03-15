@@ -196,6 +196,18 @@ function initBtns() {
       about = 25;
       aboutCard(btn);
     };
+    let popOne = document.getElementById("pop-up-1");
+    popOne.onclick = function () {
+      goAway(btn);
+    };
+    let popTwo = document.getElementById("pop-up-2");
+    popTwo.onclick = function () {
+      goAway(btn);
+    };
+    let popThree = document.getElementById("pop-up-3");
+    popThree.onclick = function () {
+      goAway(btn);
+    };
   });
 }
 
@@ -254,6 +266,10 @@ function handleStateChange() {
   cell.style.borderRight = "1px #FE5B32 solid";
   cell.style.borderBottom = "1px #FE5B32 solid";
   cell.style.color = "#FE5B32";
+
+  if(lastMove == 0 || lastMove == 24) {
+    choices.push(data.grid_image);
+  }
 
   //if (lastMove == 8 || lastMove == 11) {
     //const old = document.getElementById("cell-index-" + lastBox);
@@ -320,6 +336,20 @@ function handleStateChange() {
   else {
     cardImage.className = "card-img";
   }
+
+  if(lastMove == 2) {
+    let popOne = document.getElementById("pop-up-1");
+    popOne.style.display = "block";
+  }
+  else if(lastMove == 3) {
+    let popTwo = document.getElementById("pop-up-2");
+    popTwo.style.display = "block";
+  }
+  else if(lastMove == 5) {
+    let popThree = document.getElementById("pop-up-3");
+    popThree.style.display = "block";
+  }
+
   if (box.hasChildNodes()) {
     box.removeChild(box.lastChild);
   }
@@ -567,8 +597,10 @@ function aboutCard(type) {
 
   setActiveTile(currentMove);
 
-  choices.push(player.about_icon);
-  console.log(choices);
+  if ((currentMove - 1) == 1 || (currentMove - 1) == 7 || (currentMove - 1) == 13 || (currentMove - 1) == 23) {
+    choices.push(player.about_icon);
+    console.log(choices);
+  }
 }
 
 // Smilie Counter
@@ -590,6 +622,8 @@ function showStickers() {
 
   let main = document.getElementById("main-container");
   main.style.display = "none";
+  //let nav = document.getElementById("navigation-bar");
+  //nav.style.display = "none";
 
   const page = document.getElementById("sticker-container");
   const numRows = 2;
@@ -602,14 +636,31 @@ function showStickers() {
       stickerImage.src = "./img/" + choices[i];
       stickerImage.className = "sticker-img";
       if (i % 2 == 0) {
-        stickerImage.style.transform = "rotate(45deg)";
+        stickerImage.style.transform = "rotate(350deg)";
       } else {
-        stickerImage.style.transform = "rotate(315deg)";
+        stickerImage.style.transform = "rotate(10deg)";
       }
       console.log(stickerImage);
       page.appendChild(stickerImage);
+
+      stickerImage.addEventListener("mouseover", hoverData())
     }
   }
+}
+
+function goAway() {
+  let popOne = document.getElementById("pop-up-1");
+  let popTwo = document.getElementById("pop-up-2");
+  let popThree = document.getElementById("pop-up-3");
+  popOne.style.display = "none";
+  popTwo.style.display = "none";
+  popThree.style.display = "none";
+}
+
+function hoverData() {
+  //let one = document.getElementById("one");
+  //one.style.visibility = "visible";
+  console.log("hover");
 }
 
 // On Load

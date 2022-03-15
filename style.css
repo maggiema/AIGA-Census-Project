@@ -4,7 +4,7 @@
 }
 
 /*html.board {
-  background-image: url(img/board_background.jpg);
+  background-image: url(img/board_background.png);
   background-size: 100% auto;
   width: 100%;
   height: auto;
@@ -24,7 +24,8 @@ body {
   display: flex;
 }
 #sticker-container {
-  display: flex;
+  display: block;
+  margin: 2% 0 0 0;
 }
 #grid {
   display: table;
@@ -33,7 +34,6 @@ body {
   /* background-color: pink; */
 }
 /*#sticker-grid {
-  display: table;
   width: 100vw;
   height: 100vh;
 }*/
@@ -91,6 +91,9 @@ a{
   display: inline;
   text-decoration: none;
 }
+#sticker-home{
+  margin: 0 0 0 40px;
+}
 
 /* Line Style */
 hr {
@@ -105,6 +108,15 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+#print{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 20px;
+  margin: 2% 0 0 80%;
+  background-color: #FE5B32;
+  color: #ffffff;
 }
 #happy{
   font-family: 'Bai Jamjuree', sans-serif;
@@ -306,6 +318,20 @@ button {
   width: 10vw;
   margin: 0 0 0 20%;
 }
+/*.card-btn-hover {
+  display: none;
+  width: 10vw;
+  margin: 0 0 0 20%;
+}
+#risk-btn:hover {
+  display: none;
+}
+#reward-btn:hover {
+  display: none;
+}
+#obstacle-btn:hover {
+  display: none;
+}*/
 .card-ins {
   width: 80%;
   height: auto;
@@ -318,4 +344,29 @@ button {
   width: 20%;
   height: auto;
   margin: 0 0 0 0;
+}
+#one {
+  visibility: hidden;
+}
+
+/* Pop-Up Properties */
+.pop {
+  width: 45%;
+  height: auto;
+  position: absolute;
+  display: none;
+}
+#pop-up-1 {
+  width: 60%;
+  top: 25%;
+  left: -145%;
+}
+#pop-up-2 {
+  top: 70%;
+  left: 50%;
+}
+#pop-up-3 {
+  width: 48%;
+  top: 80%;
+  left: -18%;
 }

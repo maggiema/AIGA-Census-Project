@@ -126,16 +126,19 @@ table {
 
 /* Home Background */
 html.home {
-    background-image: url(img/home_background.jpg);
-    background-size: 100% auto;
+    background-image: url(img/home_background.png);
+    background-size: 100vw auto;
   }
 
 /* Font Styles */
 p {
     font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 600;
     font-size: 16px;
     line-height: 1.4em;
     color: #FE5B32;
+    position: absolute;
+    margin: 39.8% 0 0 64%;
 }
 h1 {
     font-family: 'Bai Jamjuree', sans-serif;
@@ -164,12 +167,15 @@ span {
 }
 a {
     font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 3em;
-    color: #FE5B32;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 15px 206px;
     text-decoration: none;
+    font-weight: 600;
+    background-color: #FE5B32;
 }
 
-/* Input Style */
+/* Input Style 
 input[type=text] {
   width: 40%;
   padding: 10px 12px;
@@ -179,7 +185,7 @@ input[type=text] {
   border-radius: 0px;
   color: #FE5B32;
   outline: none;
-}
+} */
 
 /* Space Area */
 p.space {
@@ -192,7 +198,42 @@ h3.space {
   margin: 100px 0 0 0;
 }
 a.space {
-  margin: 100px 0 0 80px;
+  margin: 1.8% 0 0 63%;
+}
+
+form {
+  margin: 39% 0 0 63%;
+  width: 100%;
+  height: auto;
+}
+input[type=text] {
+  width: 70%;
+  height: 200%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  background-color: #E8E5FF;
+  border: 1px solid #FE5B32;
+  border-radius: 0px;
+  color: #FE5B32;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+}
+input[type=submit] {
+  width: auto;
+  height: 200%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  background-color: #FFF73D;
+  border: 1px solid #FE5B32;
+  border-radius: 0px;
+  color: #FE5B32;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
 }
 
 /* Column Grid */
