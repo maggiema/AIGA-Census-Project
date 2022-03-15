@@ -20,10 +20,10 @@ body {
 }
 
 /* Grid Properties */
-#sticker-container {
+#main-container {
   display: flex;
 }
-#main-container {
+#sticker-container {
   display: flex;
 }
 #grid {
@@ -32,6 +32,11 @@ body {
   height: 90vh;
   /* background-color: pink; */
 }
+/*#sticker-grid {
+  display: table;
+  width: 100vw;
+  height: 100vh;
+}*/
 .grid-cell {
   width: 19.35%; /* 1/6 = 0.1666 */
   height: 20.35%;
@@ -40,6 +45,14 @@ body {
   border-bottom: 1px #FE5B32 dashed;
   border-right: 1px #FE5B32 dashed;
 }
+/*#sticker-grid-cell {
+  width: 19.35%;
+  height: 20.35%;
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px #FE5B32 dashed;
+  border-right: 1px #FE5B32 dashed;
+}*/
 
 /* Cell Properties */
 .cell-img {
@@ -104,15 +117,15 @@ button {
   left: 80%;
 }
 .risk {
-  background-color: #FE5B32;
-  opacity: 50%;
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
   width: 35%;
   height: 14%;
   border-radius: 10px;
   position: absolute;
-  top: 43%;
+  top: 45%;
   left: 33%;
-  display: none;
+  /*display: none;*/
 }
 /*.risk:hover {
   background-color: #FE5B32;
@@ -132,35 +145,31 @@ button {
   position: absolute;
   /*display: none;*/
 }
-/*.about:hover {
-  background-color: #FE5B32;
-  opacity: 25%;
-}*/
-#ar {
+#game {
   top: 47%;
 }
-#game {
+#graphic {
   top: 58%;
 }
-#graphic {
+#ill {
   top: 69%;
 }
-#ill {
+#pack {
   top: 80%;
 }
-#pack {
+#ui {
   top: 91%;
 }
 .race {
-  background-color: #FE5B32;
-  opacity: 50%;
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
   width: 34%;
   height: 10%;
   border-radius: 5px;
   top: 36%;
   left: 33%;
   position: absolute;
-  display: none;
+  /*display: none;*/
 }
 #black {
   top: 47%;
@@ -176,6 +185,72 @@ button {
 }
 #other {
   top: 91%;
+}
+.gender {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 34%;
+  height: 10%;
+  border-radius: 5px;
+  top: 36%;
+  left: 33%;
+  position: absolute;
+  /*display: none;*/
+}
+#male {
+  top: 47%;
+}
+#nbin {
+  top: 58%;
+}
+#ncon {
+  top: 69%;
+}
+#fluid {
+  top: 80%;
+}
+#trans {
+  top: 91%;
+}
+.exp {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 34%;
+  height: 10%;
+  border-radius: 5px;
+  top: 36%;
+  left: 33%;
+  position: absolute;
+  /*display: none;*/
+}
+#four {
+  top: 47%;
+}
+#ten {
+  top: 58%;
+}
+#fourteen {
+  top: 69%;
+}
+#twenty {
+  top: 80%;
+}
+#more {
+  top: 91%;
+}
+.sat {
+  /*background-color: #FE5B32;
+  opacity: 50%;*/
+  width: 35%;
+  height: 14%;
+  border-radius: 10px;
+  position: absolute;
+  top: 46%;
+  left: 33%;
+  /*display: none;*/
+}
+#no {
+  top: 63%;
 }
 #done{
   font-family: 'Bai Jamjuree', sans-serif;
@@ -206,7 +281,7 @@ button {
 }
 .card-img {
   /* display: none; */
-  width: 45%;
+  width: 50%;
   height: auto;
   margin: 0 0 0 25%;
 }
@@ -224,7 +299,7 @@ button {
 /* Sticker Properties */
 .sticker-img {
   /* display: none; */
-  width: 45%;
+  width: 20%;
   height: auto;
-  margin: 0 0 0 25%;
+  margin: 0 0 0 0;
 }

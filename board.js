@@ -62,41 +62,139 @@ function initBtns() {
       flipCard(btn);
     };
     // expertise options
-    let ai = document.getElementById("ai");
-    ai.onclick = function () {
-      about = 0;
-      aboutCard(btn);
-      handleOptionA(btn);
-    };
     let ar = document.getElementById("ar");
     ar.onclick = function () {
-      about = 1;
+      about = 0;
       aboutCard(btn);
-      handleOptionA(btn);
     };
     let game = document.getElementById("game");
     game.onclick = function () {
-      about = 2;
+      about = 1;
       aboutCard(btn);
-      handleOptionA(btn);
     };
     let graphic = document.getElementById("graphic");
     graphic.onclick = function () {
-      about = 3;
+      about = 2;
       aboutCard(btn);
-      handleOptionA(btn);
     };
     let ill = document.getElementById("ill");
     ill.onclick = function () {
-      about = 4;
+      about = 3;
       aboutCard(btn);
-      handleOptionA(btn);
     };
     let pack = document.getElementById("pack");
     pack.onclick = function () {
+      about = 4;
+      aboutCard(btn);
+    };
+    let ui = document.getElementById("ui");
+    ui.onclick = function () {
       about = 5;
       aboutCard(btn);
-      handleOptionA(btn);
+    };
+    // race options
+    let white = document.getElementById("white");
+    white.onclick = function () {
+      about = 6;
+      aboutCard(btn);
+    };
+    let black = document.getElementById("black");
+    black.onclick = function () {
+      about = 7;
+      aboutCard(btn);
+    };
+    let asian = document.getElementById("asian");
+    asian.onclick = function () {
+      about = 8;
+      aboutCard(btn);
+    };
+    let latino = document.getElementById("latino");
+    latino.onclick = function () {
+      about = 9;
+      aboutCard(btn);
+    };
+    let multi = document.getElementById("multi");
+    multi.onclick = function () {
+      about = 10;
+      aboutCard(btn);
+    };
+    let other = document.getElementById("other");
+    other.onclick = function () {
+      about = 11;
+      aboutCard(btn);
+    };
+    // gender options
+    let female = document.getElementById("female");
+    female.onclick = function () {
+      about = 12;
+      aboutCard(btn);
+    };
+    let male = document.getElementById("male");
+    male.onclick = function () {
+      about = 13;
+      aboutCard(btn);
+    };
+    let nbin = document.getElementById("nbin");
+    nbin.onclick = function () {
+      about = 14;
+      aboutCard(btn);
+    };
+    let ncon = document.getElementById("ncon");
+    ncon.onclick = function () {
+      about = 15;
+      aboutCard(btn);
+    };
+    let fluid = document.getElementById("fluid");
+    fluid.onclick = function () {
+      about = 16;
+      aboutCard(btn);
+    };
+    let trans = document.getElementById("trans");
+    trans.onclick = function () {
+      about = 17;
+      aboutCard(btn);
+    };
+    // experience options
+    let less = document.getElementById("less");
+    less.onclick = function () {
+      about = 18;
+      aboutCard(btn);
+    };
+    let four = document.getElementById("four");
+    four.onclick = function () {
+      about = 19;
+      aboutCard(btn);
+    };
+    let ten = document.getElementById("ten");
+    ten.onclick = function () {
+      about = 20;
+      aboutCard(btn);
+    };
+    let fourteen = document.getElementById("fourteen");
+    fourteen.onclick = function () {
+      about = 21;
+      aboutCard(btn);
+    };
+    let twenty = document.getElementById("twenty");
+    twenty.onclick = function () {
+      about = 22;
+      aboutCard(btn);
+    };
+    let more = document.getElementById("more");
+    more.onclick = function () {
+      about = 23;
+      aboutCard(btn);
+    };
+    // satisfication options
+    let yes = document.getElementById("yes");
+    yes.onclick = function () {
+      about = 24;
+      aboutCard(btn);
+    };
+    let no = document.getElementById("no");
+    no.onclick = function () {
+      about = 25;
+      aboutCard(btn);
     };
   });
 }
@@ -108,14 +206,14 @@ function cardBtns() {
     let a = document.getElementById("option-a");
     a.onclick = function () {
       handleOptionA(option);
-      a.style.backgroundColor = "#FE5B32";
-      a.style.opacity = "20%";
+      //a.style.backgroundColor = "#FE5B32";
+      //a.style.opacity = "20%";
     };
     let b = document.getElementById("option-b");
     b.onclick = function () {
       handleOptionB(option);
-      b.style.backgroundColor = "#FE5B32";
-      b.style.opacity = "20%";
+      //b.style.backgroundColor = "#FE5B32";
+      //b.style.opacity = "20%";
     };
   });
 }
@@ -157,13 +255,22 @@ function handleStateChange() {
   cell.style.borderBottom = "1px #FE5B32 solid";
   cell.style.color = "#FE5B32";
 
-  if (lastMove >= 1) {
+  if (lastMove == 8 || lastMove == 11) {
     const old = document.getElementById("cell-index-" + lastBox);
     old.style.backgroundColor = "#FFFEFC";
     let oldImage = document.createElement("img");
     oldImage.src = "./img/" + data.color_image;
     oldImage.className = "cell-img";
     old.appendChild(oldImage);
+  }
+
+  if (lastMove >= 1) {
+    const old = document.getElementById("cell-index-" + lastBox);
+    old.style.backgroundColor = "#FFFEFC";
+    //let oldImage = document.createElement("img");
+    //oldImage.src = "./img/" + data.color_image;
+    //oldImage.className = "cell-img";
+    //old.appendChild(oldImage);
   }
 
   // UI 2. display the right card with text/options
@@ -184,34 +291,109 @@ function handleStateChange() {
     done.style.color = "#FFFFFF";
   }
 
-  if (
-    data.other_card == "expertise_card.png" ||
-    data.other_card == "privilege_card.png"
-  ) {
-    let privilege = document.getElementById("graphic");
-    privilege.style.display = "block";
-  } else {
-    let privilege = document.getElementById("graphic");
-    privilege.style.display = "none";
+  let jobOne = document.getElementById("ar");
+  let jobTwo = document.getElementById("game");
+  let jobThree = document.getElementById("graphic");
+  let jobFour = document.getElementById("ill");
+  let jobFive = document.getElementById("pack");
+  let jobSix = document.getElementById("ui");
+  let raceOne = document.getElementById("white");
+  let raceTwo = document.getElementById("black");
+  let raceThree = document.getElementById("asian");
+  let raceFour = document.getElementById("latino");
+  let raceFive = document.getElementById("multi");
+  let raceSix = document.getElementById("other");
+  let genOne = document.getElementById("female");
+  let genTwo = document.getElementById("male");
+  let genThree = document.getElementById("nbin");
+  let genFour = document.getElementById("ncon");
+  let genFive = document.getElementById("fluid");
+  let genSix = document.getElementById("trans");
+  let expOne = document.getElementById("less");
+  let expTwo = document.getElementById("four");
+  let expThree = document.getElementById("ten");
+  let expFour = document.getElementById("fourteen");
+  let expFive = document.getElementById("twenty");
+  let expSix = document.getElementById("more");
+  let satOne = document.getElementById("yes");
+  let satTwo = document.getElementById("no");
+
+  if (data.other_card == "job_card.png") {
+    jobOne.style.display = "block";
+    jobTwo.style.display = "block";
+    jobThree.style.display = "block";
+    jobFour.style.display = "block";
+    jobFive.style.display = "block";
+    jobSix.style.display = "block";
+  } 
+  else {
+    jobOne.style.display = "none";
+    jobTwo.style.display = "none";
+    jobThree.style.display = "none";
+    jobFour.style.display = "none";
+    jobFive.style.display = "none";
+    jobSix.style.display = "none";
+  }
+  if (data.other_card == "race_card.png") {
+    raceOne.style.display = "block";
+    raceTwo.style.display = "block";
+    raceThree.style.display = "block";
+    raceFour.style.display = "block";
+    raceFive.style.display = "block";
+    raceSix.style.display = "block";
+  } 
+  else {
+    raceOne.style.display = "none";
+    raceTwo.style.display = "none";
+    raceThree.style.display = "none";
+    raceFour.style.display = "none";
+    raceFive.style.display = "none";
+    raceSix.style.display = "none";
+  }
+  if (data.other_card == "gender_card.png") {
+    genOne.style.display = "block";
+    genTwo.style.display = "block";
+    genThree.style.display = "block";
+    genFour.style.display = "block";
+    genFive.style.display = "block";
+    genSix.style.display = "block";
+  } 
+  else {
+    genOne.style.display = "none";
+    genTwo.style.display = "none";
+    genThree.style.display = "none";
+    genFour.style.display = "none";
+    genFive.style.display = "none";
+    genSix.style.display = "none";
+  }
+  if (data.other_card == "experience_card.png") {
+    expOne.style.display = "block";
+    expTwo.style.display = "block";
+    expThree.style.display = "block";
+    expFour.style.display = "block";
+    expFive.style.display = "block";
+    expSix.style.display = "block";
+  } 
+  else {
+    expOne.style.display = "none";
+    expTwo.style.display = "none";
+    expThree.style.display = "none";
+    expFour.style.display = "none";
+    expFive.style.display = "none";
+    expSix.style.display = "none";
+  }
+  if (data.other_card == "satisfication_card.png") {
+    satOne.style.display = "block";
+    satTwo.style.display = "block";
+  } 
+  else {
+    satOne.style.display = "none";
+    satTwo.style.display = "none";
   }
 
   // UI 3. change active tiles
   currentMove += 1;
   setActiveTile(currentMove);
-
-  //if (currentMove < 24) {
-  //setActiveTile(currentMove);
-  //}
-  //if (currentMove < 25) {
-  //currentMove += 1;
-  //}
-  //console.log("***" + currentMove);
-  //if (currentMove == 25) {
-  //let main = document.getElementById("main-container");
-  //main.style.display = "none";
-  //console.log("end");
-  //showStickers();
-  //}
 }
 
 // Card Change
@@ -317,6 +499,7 @@ function flipCard(type) {
 
 // About Card
 function aboutCard(type) {
+  // about card
   console.log("Clicked " + type);
   console.log("Clicked " + about);
   const player = player_data[about];
@@ -330,6 +513,19 @@ function aboutCard(type) {
     box.removeChild(box.lastChild);
   }
   box.appendChild(aboutImage);
+
+  // about icon
+  let cell = document.getElementById("cell-index-" + (currentMove - 1));
+  cell.removeChild(cell.lastChild);
+  let replaceImage = document.createElement("img");
+  replaceImage.src = "./img/" + player.about_icon;
+  replaceImage.className = "cell-img";
+  cell.appendChild(replaceImage);
+
+  setActiveTile(currentMove);
+
+  choices.push(player.about_icon);
+  console.log(choices);
 }
 
 // Smilie Counter
@@ -371,15 +567,6 @@ function showStickers() {
       page.appendChild(stickerImage);
     }
   }
-
-  //for(let i = 0; i < choices.length; i++){
-  //let stickerImage = document.createElement("img");
-  //stickerImage.className = "sticker-img";
-  //stickerImage.style.position = "absolute";
-  //stickerImage.style.top = Math.random()*windownHeight*.8;
-  //stickerImage.style.left = Math.random()*windownWidth*.8;
-  //page.appendChild(stickerImage);
-  //}
 }
 
 // On Load
