@@ -385,3 +385,4 @@ function showStickers() {
 // On Load
 initGrid();
 initBtns();
+updatePage();

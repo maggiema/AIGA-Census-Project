@@ -18,13 +18,13 @@
       href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <script src="./index.js"></script>
+
+    <script src="./shared.js"></script>
   </head>
 
   <body>
     <script>
       function submitButton() {
-        console.log("im here");
         var nameValue = document.getElementById("input-name").value;
         addName(nameValue);
       }
@@ -37,6 +37,7 @@
         <h1 class="together"><strong>the Game of </strong></h1>
         <span id="title">Design!</span>
       </section>
+
       <section class="col5"></section>
 
       <!-- Introduction and Start -->
@@ -50,6 +51,11 @@
           <br />
           why we love doing it.
         </p>
+
+        <!-- put this where it should go-->
+        <h1 id="show-name"></h1>
+        <!-- put this where it should go-->
+
         <p>Enter Your Name</p>
         <form onsubmit="submitButton()">
           <input type="text" id="input-name" name="name" />
@@ -58,6 +64,7 @@
       </section>
       <a href="board.html" class="space">Start</a>
       <section class="col4"></section>
+      <script src="./index.js"></script>
     </main>
   </body>
 </html>
