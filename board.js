@@ -625,6 +625,9 @@ function showStickers() {
   //let nav = document.getElementById("navigation-bar");
   //nav.style.display = "none";
 
+  let bottom = document.getElementById("sticker-bottom");
+  bottom.style.display = "block";
+
   const page = document.getElementById("sticker-container");
   const numRows = 2;
   const numCols = 5;
@@ -635,6 +638,46 @@ function showStickers() {
       let stickerImage = document.createElement("img");
       stickerImage.src = "./img/" + choices[i];
       stickerImage.className = "sticker-img";
+      if (i == 0) {
+        stickerImage.style.left = "0px";
+        stickerImage.style.top = "100px";
+      }
+      else if (i == 1) {
+        stickerImage.style.left = "250px";
+        stickerImage.style.top = "200px";
+      }
+      else if (i == 2) {
+        stickerImage.style.left = "550px";
+        stickerImage.style.top = "120px";
+      }
+      else if (i == 3) {
+        stickerImage.style.left = "800px";
+        stickerImage.style.top = "200px";
+      }
+      else if (i == 4) {
+        stickerImage.style.left = "1050px";
+        stickerImage.style.top = "100px";
+      }
+      else if (i == 5) {
+        stickerImage.style.left = "50px";
+        stickerImage.style.top = "400px";
+      }
+      else if (i == 6) {
+        stickerImage.style.left = "350px";
+        stickerImage.style.top = "400px";
+      }
+      else if (i == 7) {
+        stickerImage.style.left = "600px";
+        stickerImage.style.top = "450px";
+      }
+      else if (i == 8) {
+        stickerImage.style.left = "850px";
+        stickerImage.style.top = "400px";
+      }
+      else if (i == 9) {
+        stickerImage.style.left = "1100px";
+        stickerImage.style.top = "400px";
+      }
       if (i % 2 == 0) {
         stickerImage.style.transform = "rotate(350deg)";
       } else {
@@ -642,8 +685,6 @@ function showStickers() {
       }
       console.log(stickerImage);
       page.appendChild(stickerImage);
-
-      stickerImage.addEventListener("mouseover", hoverData())
     }
   }
 }

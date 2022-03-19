@@ -27,6 +27,10 @@ body {
   display: block;
   margin: 2% 0 0 0;
 }
+#sticker-bottom {
+  display: none;
+  margin: 2% 0 0 0;
+}
 #grid {
   display: table;
   width: 60vw;
@@ -114,7 +118,9 @@ button {
   font-size: 16px;
   font-weight: 400;
   padding: 10px 20px;
-  margin: 2% 0 0 80%;
+  position: absolute;
+  top: 700px;
+  left: 1150px;
   background-color: #FE5B32;
   color: #ffffff;
 }
@@ -344,6 +350,17 @@ button {
   width: 20%;
   height: auto;
   margin: 0 0 0 0;
+  position: absolute;
+}
+.hover-img {
+  display: none;
+  width: 10%;
+  position: absolute;
+  top: 500px;
+  left: 1000px;
+}
+.hover-img:hover{
+  display: block;
 }
 #one {
   visibility: hidden;
